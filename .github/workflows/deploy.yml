@@ -39,7 +39,6 @@ jobs:
       - name: Verify files
         run: |
           ls -la
-          ls -la nginx
 
       # Pulling latest images from Docker Hub
       - name: Pull latest images
