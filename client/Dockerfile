@@ -14,6 +14,9 @@ RUN npm run build
 # Step 2: Serve react app
 FROM nginx:alpine
 
+# Copy custom nginx config to support React Router
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 80
