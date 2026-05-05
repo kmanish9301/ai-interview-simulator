@@ -1,0 +1,66 @@
+# Build images locally test
+# version: "3.8"
+
+# services:
+#   backend:
+#     build: ./server
+#     container_name: ai-interview-backend
+#     restart: always
+#     env_file:
+#       - ./server/.env
+#     expose:
+#       - "5000"
+
+#   frontend:
+#     build: ./client
+#     container_name: ai-interview-frontend
+#     restart: always
+#     expose:
+#       - "80"
+#     depends_on:
+#       - backend
+
+#   nginx:
+#     image: nginx:alpine
+#     container_name: ai-interview-nginx
+#     ports:
+#       - "80:80"
+#     volumes:
+#       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+#     depends_on:
+#       - frontend
+#       - backend
+
+# deployment on AWS EC2
+version: "3.8"
+
+services:
+  backend:
+    image: kmanish9301/ai-interview-backend:latest
+    container_name: ai-interview-backend
+    restart: always
+    env_file:
+      - ./server/.env
+    expose:
+      - "5000"
+
+  frontend:
+    image: kmanish9301/ai-interview-frontend:latest
+    container_name: ai-interview-frontend
+    restart: always
+    expose:
+      - "80"
+    depends_on:
+      - backend
+
+  nginx:
+    image: nginx:latest
+    container_name: ai-interview-nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - frontend
+      - backend
