@@ -1,5 +1,5 @@
 import { Interview } from '../models/interview.model.js';
-import { generateQuestions } from '../services/ai.service.js';
+import { generateQuestions, generateFeedbackSummary } from '../services/ai.service.js';
 
 export const startInterview = async (req, res) => {
   try {
@@ -68,7 +68,7 @@ export const submitInterview = async (req, res) => {
     });
 
     const overallScore = correctCount; // Since there are 10 questions, score is out of 10.
-    const summary = `You answered ${correctCount} out of 10 questions correctly.`;
+    const summary = await generateFeedbackSummary(interview.role, overallScore, results);
 
     interview.answers = answers;
     interview.results = results;

@@ -3,7 +3,7 @@
 ![MERN Stack](https://img.shields.io/badge/Stack-MERN-blue?style=for-the-badge&logo=mongodb)
 ![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)
 ![Tailwind](https://img.shields.io/badge/Tailwind-CSS_v4-38B2AC?style=for-the-badge&logo=tailwind-css)
-![Groq](https://img.shields.io/badge/AI-Groq_Llama_3.1-FF4500?style=for-the-badge)
+![Groq](https://img.shields.io/badge/AI-Groq_GPT_OSS_20B-FF4500?style=for-the-badge)
 
 An advanced, premium-designed AI Interview Preparation platform built with the MERN stack. It uses the lightning-fast Groq API to generate tailored, role-specific technical multiple-choice questions (MCQs), automatically evaluates your answers, and provides detailed feedback.
 
@@ -12,7 +12,9 @@ An advanced, premium-designed AI Interview Preparation platform built with the M
 ## ✨ Key Features
 
 - **🧠 Smart AI Generation:** Generates highly specific technical questions based on any software engineering role (e.g., React Developer, DevOps, Node.js).
+- **🛡️ AI Guardrails:** Uses Zod for strict schema validation, ensuring the LLM's output is always perfectly structured and preventing backend crashes.
 - **⚡ Instant Grading:** Zero waiting time. Instantly evaluates your answers against AI-generated correct solutions.
+- **📈 Personalized AI Feedback:** Leverages GPT-OSS 20B to analyze your incorrect answers and generate a customized, dynamic study plan summarizing your strengths and weaknesses.
 - **📊 Detailed Analytics:** Provides a comprehensive breakdown of your performance, including correct answers and in-depth explanations for why an answer is correct.
 - **🎨 Premium UI/UX:** Built with Tailwind CSS v4 featuring an ultra-premium, dark-themed, glassmorphic design language.
 - **🔒 Secure Authentication:** Full JWT-based user authentication (Register/Login) to securely save and access your past interview sessions.
@@ -32,7 +34,8 @@ An advanced, premium-designed AI Interview Preparation platform built with the M
 - **Framework:** Node.js + Express.js
 - **Database:** MongoDB + Mongoose
 - **Authentication:** JSON Web Tokens (JWT) & bcrypt
-- **AI Integration:** Groq Cloud API (`llama-3.1-8b-instant`)
+- **AI Integration:** Groq Cloud API (`openai/gpt-oss-20b`)
+- **Validation:** Zod (AI Output Guardrails)
 
 ---
 
